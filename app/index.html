@@ -10,23 +10,15 @@
     </head>
     <body>
         <header>
-            <input type="text" id="thing" placeholder="Add a to-do.."/>
+            <input type="text" id="thing" maxlength="150" placeholder="Add a to-do.."/>
             <button id="add">+</button> <!--Later maybe replace + with image -->
         </header>
-        
         <div class="container">
-            
             <!--Uncompleted tasks -->
-            <ul id="undone">
-                <li> Test </li>
-            </ul>
-            
-            
+            <ul class="list" id="undone"></ul>
+    
             <!--Completed tasks -->
-            <ul id="done">
-                <li> Test </li>
-            </ul>
-            
+            <ul class="list" id="done"></ul> 
         </div>
         <script src="resources/js/main.js"></script>
     </body>

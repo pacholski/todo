@@ -5,7 +5,10 @@ nice light-blue: #99ccff
 
 body {
   background:#99ccff;
-  padding: 60px 0 0 0; /* For list to appear  under header */
+  padding: 50px 0 0 0; /* For list to appear  under header */
+  min-height: 500px;
+  margin: 0;
+
 }
 
 header{
@@ -15,7 +18,7 @@ header{
     position: fixed;
     top:0;left:0;
     background: #4d88ff;
-    
+    z-index:5;
     
 }
 
@@ -28,11 +31,11 @@ header input{
     font-size: 0.9em;
     outline:none;
     border: 0px;
-    padding: 0 10px 0 0;
+    padding: 0;
     text-indent: 20px;
     cursor: text;
     transition: outline 0.1s;
-    
+  
 }
 header input:hover, header input:active{
     outline: 1px solid white;
@@ -52,7 +55,7 @@ header button{
     
     /*by przycisk nie znikał za polem*/
     top:5px;
-    right:14px; 
+    right:22px; 
     transition: background 0.4s;
 }
 
@@ -63,3 +66,63 @@ header input::placeholder{
     color: azure;
     text-indent: 20px;
 }
+
+
+@media only screen and (max-width: 600px)
+{
+    .container
+    {
+        width: 65%;
+        float: left;
+        padding: 0 0 0 1%; 
+    }
+}
+@media only screen and (min-width: 600.01px)
+{
+    .container
+    {
+        width: 80%;
+        float: left;
+        padding: 0 0 0 1%;
+
+    }
+}
+
+
+
+ul.list{width: 100%;float: left;padding-left: 0px; margin-right: 5%;}
+
+ul.list li{
+    width: 100%;
+    min-height: 44px;
+    float: left;
+    background: #fff;
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #444;
+    margin-top: 10px;
+    padding: 5px 100px 5px 25px;
+    list-style-type: none;
+}
+
+ul.list#done{opacity: 0.5;}
+
+ul.list li .btn{
+    width: 100px;
+    height:50px;
+    position: absolute;
+    top:0;
+    right:0;
+    padding: 2px 0 0 0;
+}
+ul.list li .btn button{
+    height: 50px;
+    width: 50px;
+    
+    
+}
+
+
+

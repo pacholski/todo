@@ -14,9 +14,53 @@ function add_item(){
    }
 }
 
-function add_todo(v){
+function delete_item(){
+    var thing = this.parentNode.parentNode;
+    var parent = thing.parentNode;
+    parent.removeChild(thing);
+}
+
+function done_item(){
+    var thing = this.parentNode.parentNode;
+    var parent = thing.parentNode;
+    
+    if(parent.id==='done')
+        var moveTo = document.getElementById('undone');
+    else 
+        var moveTo = document.getElementById('done');
+
+    parent.removeChild(thing);
+    moveTo.appendChild(thing);
+}
+
+
+
+
+function add_todo(value){
+    
     var node = document.createElement("li"), 
-        textnode = document.createTextNode(v); 
+        textnode = document.createTextNode(value); 
+
+    var delBtn = document.createElement('button');
+        delBtn.classList.add('remove');
+        delBtn.innerHTML = '✕';
+    
+    var doneBtn = document.createElement('button');
+        doneBtn.classList.add('done');
+        doneBtn.innerHTML = '✓';
+    
+    var btn = document.createElement('div');
+        btn.classList.add('btn');
+    
+    //Events for new buttons
+    delBtn.addEventListener('click', delete_item);
+    doneBtn.addEventListener('click', done_item);
+    
+    
+    btn.appendChild(delBtn);
+    btn.appendChild(doneBtn);
+    
+    node.appendChild(btn);
     node.appendChild(textnode);
     undone_list.appendChild(node);
 }
