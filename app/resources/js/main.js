@@ -5,6 +5,15 @@ var thing = document.getElementById('thing'),
 
 document.getElementById('add').addEventListener('click', add_item);
 
+// Trigger button click by pressing 'Enter' on keyboard
+document.getElementById('thing').addEventListener("keyup", function(event){
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById('add').click();
+  }
+});
+
+
 function add_item(){
    if(thing.value){
         add_todo(thing.value);

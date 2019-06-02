@@ -105,7 +105,11 @@ ul.list li{
     margin-top: 10px;
     padding: 5px 100px 5px 25px;
     list-style-type: none;
+    outline: 2px solid #4d88ff;
+    
 }
+ul.list li::first-letter{text-transform: capitalize;}
+ul.list#done li{text-decoration: line-through;}
 
 ul.list#done{opacity: 0.5;}
 
@@ -120,9 +124,16 @@ ul.list li .btn{
 ul.list li .btn button{
     height: 50px;
     width: 50px;
-    
-    
 }
 
+ul.list li .btn button.remove{
+    color:red; font-size: 1.5em; transition: background 0.5s;
+}
 
+ul.list li .btn button.done{
+    color: green; font-size: 1.5em;transition: background 0.5s;
+}
+
+ul.list li .btn button.remove:hover{background-color: white; font-weight: bold;}
+ul.list li .btn button.done:hover{background-color: white; font-weight: bold;}
 
